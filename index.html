@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stable Saving — Coming Soon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1F2658;
+    --navy-soft: #5C6478;
+    --green: #1A6351;
+    --wash: #EDF2EF;
+    --bg: #FBFBF9;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: var(--bg);
+    color: var(--navy);
+    font-family: 'Inter', sans-serif;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .fade-in {
+      animation: fadeIn 0.9s ease-out both;
+    }
+    .fade-in.delay-1 { animation-delay: 0.15s; }
+    .fade-in.delay-2 { animation-delay: 0.3s; }
+    .fade-in.delay-3 { animation-delay: 0.45s; }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  header {
+    padding: 44px 48px 0;
+  }
+
+  header img {
+    height: 34px;
+    width: auto;
+    display: block;
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 48px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .content {
+    max-width: 620px;
+  }
+
+  .eyebrow {
+    font-size: 15px;
+    color: var(--green);
+    font-weight: 500;
+    margin: 0 0 20px;
+    letter-spacing: 0.01em;
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(2.6rem, 6vw, 4.4rem);
+    line-height: 1.05;
+    margin: 0 0 28px;
+    color: var(--navy);
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--green);
+  }
+
+  p.lede {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--navy-soft);
+    margin: 0;
+    max-width: 46ch;
+  }
+
+  footer {
+    padding: 28px 48px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  footer .url {
+    font-size: 14px;
+    color: var(--navy);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  footer .note {
+    font-size: 14px;
+    color: var(--navy-soft);
+  }
+
+  /* Bar motif echoing the logo mark, anchored bottom right */
+  .bars {
+    position: absolute;
+    right: -40px;
+    bottom: -30px;
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .bars span {
+    display: block;
+    background: var(--wash);
+    width: 34px;
+    border-radius: 2px 2px 0 0;
+  }
+
+  .bars span:nth-child(1) { height: 90px; }
+  .bars span:nth-child(2) { height: 150px; }
+  .bars span:nth-child(3) { height: 210px; }
+  .bars span:nth-child(4) { height: 280px; }
+  .bars span:nth-child(5) { height: 360px; }
+
+  @media (max-width: 700px) {
+    header { padding: 32px 24px 0; }
+    header img { height: 26px; }
+    main { padding: 0 24px; }
+    footer {
+      padding: 24px 24px 32px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .bars {
+      right: -30px;
+      bottom: -20px;
+      gap: 8px;
+    }
+    .bars span { width: 20px; }
+    .bars span:nth-child(1) { height: 50px; }
+    .bars span:nth-child(2) { height: 85px; }
+    .bars span:nth-child(3) { height: 120px; }
+    .bars span:nth-child(4) { height: 160px; }
+    .bars span:nth-child(5) { height: 205px; }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 3px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="bars" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <header class="fade-in">
+    <img src="logo.png" alt="Stable Saving">
+  </header>
+
+  <main>
+    <div class="content">
+      <p class="eyebrow fade-in delay-1">Coming soon</p>
+      <h1 class="fade-in delay-2">Something <em>stable</em><br>is on the way.</h1>
+      <p class="lede fade-in delay-3">Stable Saving is putting the finishing touches on a simpler way to save with confidence. We'll be here soon.</p>
+    </div>
+  </main>
+
+  <footer class="fade-in delay-3">
+    <span class="url">stablesaving.com</span>
+    <span class="note">&copy; 2026 Stable Saving</span>
+  </footer>
+
+</body>
+</html>
